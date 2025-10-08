@@ -123,14 +123,14 @@ POST /users/{id}
 The application enforces the following validation rules:
 
 - **Name**
-    - Cannot be empty
-    - Maximum 20 characters
+  - Cannot be empty
+  - Maximum 20 characters
 
 - **Email**
-    - Cannot be empty
-    - Must be a valid email format
-    - Maximum 50 characters
-    - Must be unique (enforced at database level)
+  - Cannot be empty
+  - Must be a valid email format
+  - Maximum 50 characters
+  - Must be unique (enforced at database level)
 
 ## Sample Request/Response
 
@@ -165,14 +165,18 @@ The application enforces the following validation rules:
 
 ```
 src/main/java/com/example/crud/postgressql/
+├── config/
+│   └── DataLoader.java           # Loads mock data on startup
 ├── controller/
 │   └── UserController.java       # REST API endpoints
 ├── entity/
 │   └── User.java                 # User entity with validation
-├── service/
-│   └── UserService.java          # Business logic
-└── repository/
-    └── UserRepository.java       # Database operations
+├── exception/
+│   └── GlobalExceptionHandler.java # Global error handling
+├── repository/
+│   └── UserRepository.java       # Database operations
+└── service/
+    └── UserService.java          # Business logic
 ```
 
 ## Dependencies
